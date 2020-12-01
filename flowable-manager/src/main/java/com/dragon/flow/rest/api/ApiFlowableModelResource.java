@@ -89,6 +89,7 @@ public class ApiFlowableModelResource extends BaseResource {
         return returnVo;
     }
 
+    //导入模板
     @PostMapping(value = "/import-process-model")
     public ReturnVo<String> importProcessModel(@RequestParam("file") MultipartFile file) {
         ReturnVo<String> returnVo = new ReturnVo<>(ReturnCode.SUCCESS, "OK");
@@ -100,6 +101,7 @@ public class ApiFlowableModelResource extends BaseResource {
         return returnVo;
     }
 
+    //部署，生成流程定义
     @PostMapping(value = "/deploy")
     public ReturnVo<String> deploy(String modelId) {
         ReturnVo<String> returnVo = new ReturnVo<>(ReturnCode.FAIL, "部署流程失败！");
