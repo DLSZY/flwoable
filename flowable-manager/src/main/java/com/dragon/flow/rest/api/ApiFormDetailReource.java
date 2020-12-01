@@ -62,9 +62,9 @@ public class    ApiFormDetailReource extends BaseResource {
         if (flag){
             params.setUserCode(this.getLoginUser().getId());
             returnVo = flowableTaskService.complete(params);
-        }else{
-            returnVo = new ReturnVo<>(ReturnCode.FAIL,"流程已挂起，请联系管理员激活!");
-        }
+    }else{
+        returnVo = new ReturnVo<>(ReturnCode.FAIL,"流程已挂起，请联系管理员激活!");
+    }
         return returnVo;
     }
 
@@ -201,6 +201,7 @@ public class    ApiFormDetailReource extends BaseResource {
         return returnVo;
     }
 
+    //流程跟踪
     @GetMapping(value = "/image/{processInstanceId}")
     public void image(@PathVariable String processInstanceId, HttpServletResponse response) {
         try {

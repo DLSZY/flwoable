@@ -57,6 +57,7 @@ public class ApiFlowableProcessDefinitionResource extends BaseResource {
     @PostMapping(value = "/deleteDeployment")
     public ReturnVo<String> deleteDeployment(String deploymentId) {
         ReturnVo<String> returnVo = new ReturnVo<>(ReturnCode.SUCCESS, "OK");
+        //第二个参数为true表示删除与当前流程定义相关的任何内容
         repositoryService.deleteDeployment(deploymentId, true);
         return returnVo;
     }
